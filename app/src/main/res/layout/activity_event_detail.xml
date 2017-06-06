@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/clMain"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/app_background"
+>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            android:visibility="visible">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar1"
+                style="@style/Widget.MyApp.ActionBar"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:background="@color/colorPrimary">
+
+                <RelativeLayout
+                    android:id="@+id/toolbar_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/ivBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:paddingBottom="@dimen/activity_margin_small"
+                        android:paddingTop="@dimen/activity_margin_small"
+                        android:src="@drawable/ic_back"
+                        android:visibility="visible"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="@dimen/activity_margin"
+                        android:layout_marginRight="@dimen/activity_margin"
+                        android:layout_toEndOf="@+id/ivBack"
+                        android:layout_toLeftOf="@+id/ivFavourite"
+                        android:layout_toRightOf="@+id/ivBack"
+                        android:layout_toStartOf="@+id/ivFavourite"
+                        android:gravity="left"
+                        android:text="@string/activity_event_detail_title"
+                        android:textColor="@color/text_color_white"
+                        android:textSize="@dimen/text_size_large"
+                        android:textStyle="bold"/>
+                    <ImageView
+                        android:id="@+id/ivFavourite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_star_border"
+                        android:visibility="gone"/>
+
+                </RelativeLayout>
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.AppBarLayout>
+        <RelativeLayout
+            android:id="@+id/rlMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/appBar"
+            android:visibility="visible">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/llButtons"
+                android:layout_alignParentTop="true">
+                <RelativeLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/activity_margin_small"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvProgrammeName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/activity_margin_small"
+                        android:text="Dr.Rahul Jain"
+                        android:textColor="@color/app_text_color_dark"
+                        android:textSize="@dimen/text_size_extra_large"
+                        android:textStyle="bold"/>
+
+                    <RelativeLayout
+                        android:id="@+id/rl0"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvProgrammeName"
+                        android:layout_margin="@dimen/activity_margin_small">
+                        <RelativeLayout
+                            android:id="@+id/rlImage"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/ivSpeakerImage"
+                                android:layout_width="match_parent"
+                                android:layout_height="100dp"
+                                android:background="@drawable/round_outline"
+                                android:scaleType="centerCrop"/>
+                            <ProgressBar
+                                android:id="@+id/progressBar"
+                                style="?android:attr/progressBarStyleSmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:visibility="visible"/>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rr3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/rlImage"
+                            android:layout_alignTop="@+id/rlImage"
+                            android:layout_marginLeft="@dimen/activity_margin_small"
+                            android:layout_marginStart="@dimen/activity_margin_small"
+                            android:layout_toEndOf="@+id/rlImage"
+                            android:layout_toRightOf="@+id/rlImage">
+
+                            <TextView
+                                android:id="@+id/tvSpeakerName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Dr.Rahul Jain"
+                                android:textColor="@color/app_text_color_dark"
+                                android:textSize="@dimen/text_size_large"
+                                android:textStyle="bold"/>
+                            <!--
+                                                    <com.actiknow.famdent.utils.ExpandableTextView
+                                                        android:id="@+id/tvSpeakerQualification"
+                                                        android:layout_width="fill_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_below="@+id/tvSpeakerName"
+                                                        android:text="BDS, MDS - Oral and Maxillofacial Surgery"
+                                                        android:textColor="@color/app_text_color_light"
+                                                        android:textSize="@dimen/text_size_extra_small"/>
+                                                    -->
+                            <TextView
+                                android:id="@+id/tvSpeakerQualification"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvSpeakerName"
+                                android:ellipsize="end"
+                                android:maxLines="5"
+                                android:text="BDS, MDS - Oral and Maxillofacidal Surgery"
+                                android:textColor="@color/app_text_color_light"
+                                android:textSize="@dimen/text_size_extra_small"/>
+
+                            <!--
+
+                            <TextView
+                                android:id="@+id/tvSpeakerQualification"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvSpeakerName"
+                                android:text="BDS, MDS - Oral and Maxillofacial Surgery"
+                                android:textColor="@color/app_text_color_light"
+                                android:textSize="@dimen/text_size_medium"/>
+
+                            -->
+                            <TextView
+                                android:id="@+id/tvExp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvSpeakerQualification"
+                                android:text="Experience:"
+                                android:textColor="@color/app_text_color_light"
+                                android:textSize="@dimen/text_size_medium"
+                                android:visibility="gone"/>
+                            <TextView
+                                android:id="@+id/tvExperience"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvSpeakerQualification"
+                                android:layout_marginLeft="@dimen/activity_margin_extra_small"
+                                android:layout_marginStart="@dimen/activity_margin_extra_small"
+                                android:layout_toEndOf="@+id/tvExp"
+                                android:layout_toRightOf="@+id/tvExp"
+                                android:text="9 Years"
+                                android:textColor="@color/app_text_color_light"
+                                android:textSize="@dimen/text_size_medium"
+                                android:visibility="gone"/>
+
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/viewpager"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:visibility="gone"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+                    <LinearLayout
+                        android:id="@+id/layoutDots"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/viewpager"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="gone"/>
+                    <RelativeLayout
+                        android:id="@+id/rl1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/rl0"
+                        android:layout_marginLeft="@dimen/activity_margin_small"
+                        android:layout_marginRight="@dimen/activity_margin_small"
+                    >
+
+                        <ImageView
+                            android:id="@+id/ivServiceIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/text_color_white"
+                            android:padding="@dimen/activity_margin_small"
+                            android:src="@drawable/ic_list"/>
+                        <TextView
+                            android:id="@+id/tvServiceName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/ivServiceIcon"
+                            android:layout_alignTop="@+id/ivServiceIcon"
+                            android:layout_toEndOf="@+id/ivServiceIcon"
+                            android:layout_toRightOf="@+id/ivServiceIcon"
+                            android:background="@color/primary"
+                            android:gravity="center_vertical"
+                            android:paddingEnd="@dimen/activity_margin_small"
+                            android:paddingLeft="@dimen/activity_margin_small"
+                            android:paddingRight="@dimen/activity_margin_small"
+                            android:paddingStart="@dimen/activity_margin_small"
+                            android:text="ABOUT EVENT"
+                            android:textColor="@color/text_color_white"
+                            android:textSize="@dimen/text_size_large"
+                            android:textStyle="bold"/>
+
+                        <LinearLayout
+                            android:id="@+id/llTopics"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvServiceName"
+                            android:layout_marginTop="@dimen/activity_margin_small"
+                            android:layout_toEndOf="@+id/ivServiceIcon"
+                            android:layout_toRightOf="@+id/ivServiceIcon"
+                            android:orientation="vertical">
+                        </LinearLayout>
+                        <!--
+                                        <TextView
+                                            android:id="@+id/tvImpaction"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/tvServiceName"
+                                            android:layout_marginTop="@dimen/activity_margin_small"
+                                            android:layout_toEndOf="@+id/ivServiceIcon"
+                                            android:layout_toRightOf="@+id/ivServiceIcon"
+                                            android:gravity="start"
+                                            android:text="Impaction"
+                                            android:textColor="@color/text_color_black"
+                                            android:textSize="15sp"/>
+
+                                        <TextView
+                                            android:id="@+id/tvImpantology"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/tvImpaction"
+                                            android:layout_toRightOf="@+id/ivServiceIcon"
+                                            android:gravity="left"
+                                            android:paddingTop="5dp"
+                                            android:text="Implantology"
+                                            android:textColor="@color/text_color_black"
+                                            android:textSize="15sp"/>
+
+                                        <TextView
+                                            android:id="@+id/tvSurgery"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/tvImpantology"
+                                            android:layout_toRightOf="@+id/ivServiceIcon"
+                                            android:gravity="left"
+                                            android:paddingBottom="5dp"
+                                            android:paddingTop="5dp"
+                                            android:text="Tmj Surgery"
+                                            android:textColor="@color/text_color_black"
+                                            android:textSize="15sp"/>
+
+                                        -->
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/rl2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rl1"
+                        android:layout_marginLeft="@dimen/activity_margin_small"
+                        android:layout_marginRight="@dimen/activity_margin_small"
+                        android:layout_marginTop="@dimen/activity_margin_small">
+
+                        <ImageView
+                            android:id="@+id/ivSchedule"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/text_color_white"
+                            android:padding="@dimen/activity_margin_small"
+                            android:src="@drawable/ic_time"/>
+
+                        <TextView
+                            android:id="@+id/tvSchedule"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/ivSchedule"
+                            android:layout_alignTop="@+id/ivSchedule"
+                            android:layout_toEndOf="@+id/ivSchedule"
+                            android:layout_toRightOf="@+id/ivSchedule"
+                            android:background="@color/primary"
+                            android:gravity="center_vertical"
+                            android:paddingEnd="@dimen/activity_margin_small"
+                            android:paddingLeft="@dimen/activity_margin_small"
+                            android:paddingRight="@dimen/activity_margin_small"
+                            android:paddingStart="@dimen/activity_margin_small"
+                            android:text="SCHEDULE"
+                            android:textColor="@color/text_color_white"
+                            android:textSize="@dimen/text_size_large"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/tvDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvSchedule"
+                            android:layout_marginTop="@dimen/activity_margin_small"
+                            android:layout_toEndOf="@+id/ivSchedule"
+                            android:layout_toRightOf="@+id/ivSchedule"
+                            android:text="Date : 27th May"
+                            android:textColor="@color/text_color_black"
+                            android:textSize="@dimen/text_size_medium"/>
+
+                        <TextView
+                            android:id="@+id/tvTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvDate"
+                            android:layout_marginTop="@dimen/activity_margin_extra_small"
+                            android:layout_toEndOf="@+id/ivSchedule"
+                            android:layout_toRightOf="@+id/ivSchedule"
+                            android:gravity="start"
+                            android:visibility="gone"
+                            android:text="Time : 12 Noon"
+                            android:textColor="@color/text_color_black"
+                            android:textSize="@dimen/text_size_medium"/>
+
+                        <TextView
+                            android:id="@+id/tvLocation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvTime"
+                            android:layout_marginTop="@dimen/activity_margin_extra_small"
+                            android:layout_toEndOf="@+id/ivSchedule"
+                            android:layout_toRightOf="@+id/ivSchedule"
+                            android:gravity="start"
+                            android:text="Location : New Delhi"
+                            android:textColor="@color/text_color_black"
+                            android:textSize="@dimen/text_size_medium"/>
+
+                        <TextView
+                            android:id="@+id/tvDuration"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvLocation"
+                            android:layout_marginTop="@dimen/activity_margin_extra_small"
+                            android:layout_toEndOf="@+id/ivSchedule"
+                            android:layout_toRightOf="@+id/ivSchedule"
+                            android:gravity="start"
+                            android:text="Duration : 3 hours"
+                            android:textColor="@color/text_color_black"
+                            android:textSize="@dimen/text_size_medium"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/rl3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rl2"
+                        android:layout_marginLeft="@dimen/activity_margin_small"
+                        android:layout_marginRight="@dimen/activity_margin_small"
+                        android:layout_marginTop="@dimen/activity_margin_small">
+                        <ImageView
+                            android:id="@+id/ivFees"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/text_color_white"
+                            android:padding="@dimen/activity_margin_small"
+                            android:src="@drawable/ic_fee"/>
+
+                        <TextView
+                            android:id="@+id/tvFees"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/ivFees"
+                            android:layout_alignTop="@+id/ivFees"
+                            android:layout_toEndOf="@+id/ivFees"
+                            android:layout_toRightOf="@+id/ivFees"
+                            android:background="@color/primary"
+                            android:gravity="center_vertical"
+                            android:paddingEnd="@dimen/activity_margin_small"
+                            android:paddingLeft="@dimen/activity_margin_small"
+                            android:paddingRight="@dimen/activity_margin_small"
+                            android:paddingStart="@dimen/activity_margin_small"
+                            android:text="REGISTRATION INFORMATION"
+                            android:textColor="@color/text_color_white"
+                            android:textSize="@dimen/text_size_large"
+                            android:textStyle="bold"/>
+
+
+                        <TextView
+                            android:id="@+id/tvCost"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvFees"
+                            android:layout_marginTop="@dimen/activity_margin_small"
+                            android:layout_toEndOf="@+id/ivFees"
+                            android:layout_toRightOf="@+id/ivFees"
+                            android:gravity="start"
+                            android:text="The Seminar costs Rs 10,000."
+                            android:textColor="@color/text_color_black"
+                            android:textSize="@dimen/text_size_medium"/>
+
+                        <TextView
+                            android:id="@+id/tvNotes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvCost"
+                            android:layout_toEndOf="@+id/ivFees"
+                            android:layout_toRightOf="@+id/ivFees"
+                            android:gravity="start"
+                            android:text="Notes"
+                            android:textColor="@color/text_color_black"
+                            android:textSize="@dimen/text_size_medium"/>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </ScrollView>
+            <LinearLayout
+                android:id="@+id/llButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_alignParentBottom="true"
+                android:weightSum="1.0">
+                <TextView
+                    android:id="@+id/tvAddFavourite"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/activity_margin_small"
+                    android:layout_marginLeft="@dimen/activity_margin_small"
+                    android:layout_marginRight="@dimen/activity_margin_small"
+                    android:layout_marginTop="@dimen/activity_margin_small"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/button_bg"
+                    android:elevation="@dimen/button_elevation"
+                    android:gravity="center"
+                    android:padding="@dimen/activity_margin"
+                    android:text="ADD TO FAVOURITE"
+                    android:textColor="@color/text_color_white"
+                    android:textSize="@dimen/text_size_medium"
+                    android:visibility="visible"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>
